@@ -11,7 +11,6 @@ private val scrabbleScore = ScrabbleScore();
 //    - the user should be continually asked to enter a word until they type a sentinel value (e.g. -1) to end the program
 
 fun main(args: Array<String>) {
-    scrabbleScore.letterValues()
     while (true) {
         println(scrabbleScore.letterValues())
         print("")
