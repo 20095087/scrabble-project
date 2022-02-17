@@ -1,15 +1,20 @@
+import java.util.*
+
 class ScrabbleScore {
 
     fun scoreWord(word: String): Int{
-        //TODO calculate using the scoreLetter method below, the scrabble value of the word passed as a parameter
-
-        return 0
+        var value: Int = 0
+        var char: Char
+        for(i in word.indices){
+            char = word[i].uppercaseChar()
+            value += scoreLetter(char)
+        }
+        //println(value)
+        return value
     }
 
-    //TODO the program if the user enters in any chars other than capital letters...try fix this.
     //Reference: https://exercism.org/tracks/kotlin/exercises/scrabble-score/solutions?page=1
     private fun scoreLetter(char: Char): Int {
-        char.uppercase()
         return when (char) {
             in "AEIOULNRST" -> 1
             in "DG" -> 2
